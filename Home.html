@@ -149,6 +149,34 @@
             font-weight: bold;
             font-size: 20px;
         }
+           .container {
+            text-align: center;
+        }
+
+        input {
+            width: 230px;
+            margin-bottom: px;
+            padding: 5px;
+            font-size: 16px;
+            color: blue;
+            border-color: black;
+        }
+
+        button {
+            padding: px px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            border-color: transparent;
+            background-color: blue;
+            color: white;
+        }
+
+        #message {
+            margin-top: 10px;
+            color: green;
+        }
+        
         
     </style>
 </head>
@@ -203,6 +231,17 @@
     <a href="https://zireemilsoude.net/4/8551935">
         <button style="margin-bottom: 15px; width: 95%; background-color: silver; height: 50px;"  class="ad link" onclick="handleAdClick(1)"> Click Here</button>
       </a>
+     <div style="background-color: red;">
+      <ul>
+        <b>
+          <h4 style="color: white; text-align: center; font-size: 25px; margin-left: -45px;"> Invite friends</h4>
+        </b>
+      </ul>
+        <input type="text" id="linkToCopy" value="Join clickgains now, and make up to *$10* in a day.                                         https://clickgains.com.ng" readonly>
+        <button id="copyButton">Copy Link</button>
+        <p id="message"></p>
+        
+     </div>
         <h2 style="color: white; text-align: center; font-weight: bold;">How to earn with ClickGains</h2>
       <video  style="margin-left: 20px;" width="90%" height="300" controls loop muted poster="/poster.jpg">
         <h2 style="color: white">How to earn with ClickGains</h2>
@@ -263,5 +302,19 @@ Copyright © - HBI Technology Ltd | All rights reserved
             }
         });
     </script>
+     <script>
+        document.getElementById('copyButton').addEventListener('click', function() {
+            const linkInput = document.getElementById('linkToCopy');
+            
+            // Use the Clipboard API
+            navigator.clipboard.writeText(linkInput.value)
+                .then(() => {
+                    documentq.getElementById('message').innerText = 'Copied to clipboard!';
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+        });
+     </script>
 </body>
 </html>
